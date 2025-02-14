@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <div class = "search-bar">
+            <label for="weather-input">Weather:</label>
+            <input type="text" id="weather-input" name="weather-input">
+            <button type="generic" id="search">Search</button>
+        </div>
+        <div class="weather-visual">
+            <h3 class ="location">Brookline MA United States </h3>
+            <img class ="weather-icon" src="" alt="">
+            <p class = "weather-status">Raining</p>
+        </div>
+        <div class="weather-information">
+            <div class="temperature-container">
+                <h3>Current Temperature</h3>
+                <h4 class = "temperature current">30 F</h4>
+                <h3>Temperature High/Low</h3>
+                <h4 class = "temperature high-low">32/18 F</h4>
+            </div>
+            <div class="precipitation-container">
+                <h3>Chance of Precipitation</h3>
+                <h4 class ="precipitation percentage">18%</h4>
+                <h3>Type of Precipitation</h3>
+                <h4 class = "precipitation type">Rain</h4>
+            </div>
+        </div>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>

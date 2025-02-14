@@ -1,0 +1,87 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+  }
+  body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+  /* 5. Improve media defaults */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /* 6. Inherit fonts for form controls */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /* 7. Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /* 8. Improve line wrapping */
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+  /* CSS reset ^^ */
+
+main{
+    min-width:600px;
+    min-height:600px;
+    background-color:rgb(26, 121, 177);
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    padding:2rem;
+    border:5px solid steelblue;
+    border-radius:10px;
+    gap:1rem;
+}
+
+img{
+    min-height:300px;
+    min-width:150px;
+}
+
+.weather-visual{
+    text-align:center;
+}
+
+.weather-information{
+    border:5px solid black;
+    border-radius:5px;
+    min-width:400px;
+    min-height:100px;
+    display:flex;
+    gap:2rem;
+    justify-content:space-around;
+    align-items:center;
+    padding:1rem;
+}
+
+.temperature-container{
+    font-size:1rem;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+}

@@ -33,9 +33,36 @@ FIgure out if you can create a forecast object containing the methods commented 
 
 */
 
+const p = document.querySelector(".weather");
+const searchBtn = document.querySelector("#search");
+searchBtn.addEventListener("click", ()=>{
+    const input = document.getElementById("weather-input").value;
+    let address = formatAddress(input);
+    setLocation(address);
 
-async function getData(){
-    const response = await fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Brookline%20Massachusetts?unitGroup=us&key=NMNT3RLNJR5DDLMQP9S378A3B&contentType=json", {mode:"cors"});
+
+})
+
+function formatAddress(user_input){
+    if (user_input.includes(",")){
+        const formattedInput = user_input.split(",");
+        return formattedInput;
+    }else{
+        const formattedInput = user_input.split(" ");
+        return formattedInput;
+    }
+};
+
+async function getData(address){
+    const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${address[0]}%20${address[1]}?unitGroup=us&key=NMNT3RLNJR5DDLMQP9S378A3B&contentType=json`, {mode:"cors"});
     const data = await response.json();
+    return data;
+}
+
+
+async function setLocation(address){
+    const locationData = await getData(address);
+    p.textContent = locationData.resolvedAddress;
+    
 }
 
